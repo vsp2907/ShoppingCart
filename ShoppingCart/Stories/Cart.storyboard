@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TTo-QH-sgi">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="WorkSans-Medium.ttf">
+            <string>WorkSans-Medium</string>
+        </array>
+        <array key="WorkSans-Regular.ttf">
+            <string>WorkSans-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Your Shopping Cart-->
+        <scene sceneID="wdD-Yy-37F">
+            <objects>
+                <viewController storyboardIdentifier="CartViewController" id="3kO-Wy-nEM" customClass="CartViewController" customModule="ShoppingCart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GL0-f0-dPt">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kwZ-xS-Bso">
+                                <rect key="frame" x="0.0" y="103" width="393" height="637"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="3kO-Wy-nEM" id="KnC-jE-fLj"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="Your Shopping Cart is empty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Atw-j2-40f">
+                                <rect key="frame" x="99.000000000000014" y="417.66666666666669" width="195.33333333333337" height="16.666666666666686"/>
+                                <fontDescription key="fontDescription" name="WorkSans-Medium" family="Work Sans" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vd3-t5-IFh">
+                                <rect key="frame" x="16" y="756" width="361" height="47"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="M19-jV-5fW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="16"/>
+                                <state key="normal" title="Proceed to checkout">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="actionCheckout:" destination="3kO-Wy-nEM" eventType="touchUpInside" id="ZKV-hm-90n"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="abW-cK-3Sl"/>
+                        <color key="backgroundColor" name="AppBackground"/>
+                        <constraints>
+                            <constraint firstItem="Atw-j2-40f" firstAttribute="centerY" secondItem="GL0-f0-dPt" secondAttribute="centerY" id="5od-AW-Ilu"/>
+                            <constraint firstItem="Vd3-t5-IFh" firstAttribute="top" secondItem="kwZ-xS-Bso" secondAttribute="bottom" constant="16" id="71G-r2-Nbp"/>
+                            <constraint firstItem="Vd3-t5-IFh" firstAttribute="leading" secondItem="abW-cK-3Sl" secondAttribute="leading" constant="16" id="GSK-XA-AK3"/>
+                            <constraint firstItem="kwZ-xS-Bso" firstAttribute="trailing" secondItem="abW-cK-3Sl" secondAttribute="trailing" id="Jey-c7-qZK"/>
+                            <constraint firstItem="abW-cK-3Sl" firstAttribute="trailing" secondItem="Vd3-t5-IFh" secondAttribute="trailing" constant="16" id="TgH-nQ-8Ff"/>
+                            <constraint firstItem="abW-cK-3Sl" firstAttribute="bottom" secondItem="Vd3-t5-IFh" secondAttribute="bottom" constant="15" id="k6O-J4-Slh"/>
+                            <constraint firstItem="kwZ-xS-Bso" firstAttribute="top" secondItem="abW-cK-3Sl" secondAttribute="top" id="qOq-O7-WqP"/>
+                            <constraint firstItem="kwZ-xS-Bso" firstAttribute="leading" secondItem="abW-cK-3Sl" secondAttribute="leading" id="rjk-xJ-yh3"/>
+                            <constraint firstItem="Atw-j2-40f" firstAttribute="centerX" secondItem="GL0-f0-dPt" secondAttribute="centerX" id="xkX-3v-Lzi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Your Shopping Cart" id="1U0-b4-Gon"/>
+                    <connections>
+                        <outlet property="btnCheckout" destination="Vd3-t5-IFh" id="ArM-y1-gk9"/>
+                        <outlet property="lblNoItems" destination="Atw-j2-40f" id="QQX-Ce-aXi"/>
+                        <outlet property="tableView" destination="kwZ-xS-Bso" id="LbG-8K-Rsg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hUm-OY-C5f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="202.29007633587784" y="57.74647887323944"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gUz-yf-mDH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TTo-QH-sgi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ss1-lE-7VQ">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="AppBackground"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3kO-Wy-nEM" kind="relationship" relationship="rootViewController" id="QSZ-Rz-Lnf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k2Z-VH-dC8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-724.4274809160305" y="57.74647887323944"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="AppBackground">
+            <color red="0.12156862745098039" green="0.13725490196078433" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
